@@ -4,11 +4,11 @@ import plotly.graph_objs as go
 
 # Sample data for demonstration
 skills_data = {
-    'Programming': {'Java': 80, 'Python': 90, 'C': 70, 'C++': 75},
-    'Big Data': {'Spark': 85, 'NiFi': 60, 'Hadoop': 80, 'Kubernetes': 70, 'AWS': 65},
-    'Software Development': {'Github': 90, 'HTML': 80, 'CSS': 75, 'Javascript': 85, 'PHP': 60, 'CI/CD': 70},
-    'Analytics & Visualization': {'R': 80, 'MATLAB': 70, 'SPSS': 65, 'PowerBI': 85},
-    'Machine Learning': {'Tensorflow': 75, 'Keras': 80, 'Scikit-Learn': 85, 'NLTK': 70}
+    'Programming': {'Java': 80, 'Python': 90, 'C': 75, 'C++': 75},
+    'Big Data': {'Spark': 60, 'NiFi': 50, 'Hadoop': 60, 'Kubernetes': 50, 'AWS': 65},
+    'Software Development': {'Github': 80, 'HTML': 95, 'CSS': 85, 'Javascript': 85, 'PHP': 90, 'CI/CD': 50},
+    'Analytics & Visualization': {'R': 80, 'MATLAB': 70, 'SPSS': 70, 'PowerBI': 85, 'MS Excel': 85},
+    'Machine Learning': {'Tensorflow': 70, 'Keras': 70, 'Scikit-Learn': 85, 'NLTK': 80}
 }
 
 projects_data = {
