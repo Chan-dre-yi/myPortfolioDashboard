@@ -1,7 +1,6 @@
 import dash
 from dash import dcc, html
 import plotly.graph_objs as go
-from dash.renderer import DashRenderer
 
 # Sample data for demonstration
 skills_data = {
@@ -224,12 +223,6 @@ app.layout = html.Div(children=[
 # To run this app, use the following command
 #app.run_server(debug=True)
 
-# Create a DashRenderer instance
-renderer = DashRenderer()
-
-# Render the app to an HTML string
-html_string = renderer.render(app)
-
-# Export the HTML string as an HTML file
-with open('portfolio_dashboard.html', 'w') as f:
-    f.write(html_string)
+# This is used by the WSGI server to run your app
+if __name__ == '__main__':
+    app.run_server(debug=True)
