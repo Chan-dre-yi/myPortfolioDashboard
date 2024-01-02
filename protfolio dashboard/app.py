@@ -5,10 +5,10 @@ import plotly.graph_objs as go
 # Sample data for demonstration
 skills_data = {
     'Programming': {'Java': 80, 'Python': 90, 'C': 75, 'C++': 75},
-    'Big Data': {'Spark': 60, 'NiFi': 50, 'Hadoop': 60, 'Kubernetes': 50, 'AWS': 65},
-    'Software Development': {'Github': 80, 'HTML': 95, 'CSS': 85, 'Javascript': 85, 'PHP': 90, 'CI/CD': 50},
     'Analytics & Visualization': {'R': 80, 'MATLAB': 70, 'SPSS': 70, 'PowerBI': 85, 'MS Excel': 85},
-    'Machine Learning': {'Tensorflow': 70, 'Keras': 70, 'Scikit-Learn': 85, 'NLTK': 80}
+    'Machine Learning': {'Tensorflow': 70, 'Keras': 70, 'Scikit-Learn': 85, 'NLTK': 80},
+    'Software Development': {'Github': 80, 'HTML': 95, 'CSS': 85, 'Javascript': 85, 'PHP': 90, 'CI/CD': 50},
+    'Big Data': {'Spark': 60, 'NiFi': 50, 'Hadoop': 60, 'Kubernetes': 50, 'AWS': 65}   
 }
 
 projects_data = {
@@ -30,7 +30,8 @@ project_details = {
     'DamageDetective': 'An image analysis tool for damage detection.',
     'DataZip': 'A data compression utility.',
     'StrateGenius': 'A strategy planning application.',
-    'MyCV.web': 'My personal website and CV.'
+    'MyCV.web': 'My personal website and CV.',
+    'Portfolio Dashboard': 'This dashboard.'
 }
 
 # Positions of Responsibility data (customize this according to your roles)
@@ -102,7 +103,7 @@ section_style = {
 app = dash.Dash(__name__)
 
 app.layout = html.Div(children=[
-    html.H1(children='Chandreyi Chowdhury : PORTFOLIO DASHBOARD', style={'textAlign': 'center', 'fontSize': 20, 'fontFamily': 'Verdana, Geneva, sans-serif', 'marginTop': '20px'}),
+    html.H1(children='Chandreyi Chowdhury : PORTFOLIO DASHBOARD', style={'textAlign': 'center', 'fontSize': 24, 'fontFamily': 'Verdana, Geneva, sans-serif', 'marginTop': '20px', 'color': '#5e5e5e'}),
     
     # Wrap the links in a div with display style 'flex'
     html.Div([
@@ -129,13 +130,14 @@ app.layout = html.Div(children=[
                     )],
                     'layout': go.Layout(
                         title={'text': f'{category} Skills', 'font': {'size': 8}},
-                        xaxis={'title': '', 'titlefont': {'size': 8}, 'tickfont': {'size': 6}},
+                        xaxis={'title': '', 'titlefont': {'size': 8}, 'tickfont': {'size': 6}, 'range': [0, 100]},
                         yaxis={'title': '', 'titlefont': {'size': 8}, 'tickfont': {'size': 8}},
                         margin=dict(l=60, r=20, t=30, b=20),
-                        height=120
+                        height=120,
+                        plot_bgcolor='#f9f9f9'
                     )
                 },
-                style={'display': 'inline-block', 'width': '19%'}
+                style={'display': 'inline-block', 'width': '20%'}
             ) for category, skills in skills_data.items()
         ], style={'textAlign': 'center', 'display': 'flex', 'flexWrap': 'wrap'})
     ], style={**section_style, 'font-weight': 'bold'}),
@@ -221,10 +223,8 @@ app.layout = html.Div(children=[
 ], style={'margin': 'auto', 'width': '95%'})
 
 # To run this app, use the following command
-#app.run_server(debug=True)
+app.run_server(debug=True)
 
 # This is used by the WSGI server to run your app
 #if __name__ == '__main__':
 #    app.run_server(debug=True)
-
-pip freeze > requirements.txt
