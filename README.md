@@ -1,3 +1,3 @@
 # myPortfolioDashboard
 
-A responsive webpage version of my resume implementing some small interactivities.
+A  python dashboard version of my resume implementing some small interactivities.
